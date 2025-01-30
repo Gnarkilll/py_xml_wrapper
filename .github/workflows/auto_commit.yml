@@ -13,7 +13,7 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          git clone https://${GH_PAT}@github.com/Gnarkilll/screen_tapper.git repo
+          git clone https://${GH_PAT}@github.com/Gnarkilll/py_xml_wrapper.git repo
           cd repo
           git config --global user.name "Gnarkilll"
           git config --global user.email "vpcorwin@gmail.com"
@@ -23,7 +23,7 @@ jobs:
           cd repo
           echo "Auto-commit: $(date)" >> activity_log.txt
           git add activity_log.txt
-          git commit -m "Auto-commit $(date)" || exit 0  # Если нечего коммитить — не ломает workflow
+          git commit -m "Auto-commit $(date)" || exit 0
 
       - name: Push changes
         env:
